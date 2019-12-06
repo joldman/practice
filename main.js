@@ -1,8 +1,3 @@
-require('update-electron-app')({
-    repo: 'https://github.com/joldman/practice',
-    updateInterval: '5 minutes',
-    logger: require('electron-log')
-  })
 
 const { app, BrowserWindow } = require('electron')
 
