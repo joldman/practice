@@ -1,9 +1,3 @@
-require('update-electron-app')({
-  repo: 'https://github.com/joldman/practice',
-  updateInterval: '5 minutes',
-  logger: require('electron-log')
-})
-
 const { app, BrowserWindow, ipcMain } = require('electron');
 const { autoUpdater } = require('electron-updater');
 
@@ -25,7 +19,6 @@ function createWindow () {
 
 app.on('ready', () => {
   createWindow();
-  console.log("create window executed and running for checking for update")
   autoUpdater.checkForUpdatesAndNotify();
 });
 
