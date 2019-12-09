@@ -27,6 +27,13 @@
 </head>
 <body>
   <h1>Electron Auto Update Example</h1>
+  
+  <p>Arguments 
+    <script>
+      document.write(require('electron').remote.process.argv)
+    </script>
+  </p>
+  
   <p id="version"></p>
   <div id="notification" class="hidden">
     <p id="message"></p>

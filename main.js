@@ -19,7 +19,12 @@ function createWindow () {
 
 app.on('ready', () => {
   createWindow();
-  autoUpdater.checkForUpdatesAndNotify();
+  //Check for Update only if not explicitly disabled e.g. "start": "electron . --disableAutoUpdate"
+  var isAutoUpdateOn = process.argv.indexOf('--disableAutoUpdate')!=-1?false:true
+  if(isAutoUpdateOn) {
+    autoUpdater.checkForUpdatesAndNotify();
+  }
+  
 });
 
 app.on('window-all-closed', function () {
